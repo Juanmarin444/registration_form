@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register</title>
+        <link rel= "stylesheet" type= "text/css" href= "/static/style.css">
+    </head>
+    <body>
+        <div id='wrapper'>
+            <div id='headers'>
+                <h1>The Basketball Team.</h1>
+                <h2>Love to play basketball?</h2>
+                <h3>Sign Up for Free!</h3>
+            </div>
+            <div id='flash_messages'>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for catergory, message in messages %}
+                            <p class='{{  catergory  }}'> {{ message }}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+            <div id='form'>
+                <form action='/process' method='POST'>
+                    First Name: <input type='text' name='first_name'><br>
+                    Last Name: <input type='text' name='last_name'><br>
+                    Birthday: <input type="date" name="bday"><br>
+                    Email: <input type='text' name='email'><br>
+                    Password: <input type='password' name='password1'><br>
+                    Comfirm Password: <input type='password' name='password2'><br>
+                    <input type='submit' value='submit'>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

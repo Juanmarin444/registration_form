@@ -1,0 +1,12 @@
+*{
+    text-align: center; 
+}
+.error {
+    color: red;
+}
+.message {
+    color: blue;
+}
+#wrapper{
+    background-color: rgb(188, 224, 146)
+}
